@@ -1070,15 +1070,15 @@ public class MarkorDialogFactory {
             final GsCallback.a1<GsFileUtils.SortOrder> callback
     ) {
         // Position constants for dialog items
-        private final int POS_MIMETYPE = 0;
-        private final int POS_NAME = 1;
-        private final int POS_MTIME = 2;
-        private final int POS_FILESIZE = 3;
-        private final int POS_CTIME = 4;
-        private final int POS_FOLDER_LOCAL = 5;
-        private final int POS_FOLDER_FIRST = 6;
-        private final int POS_REVERSE = 7;
-        private final int POS_DOTFILES = 8;
+        final int POS_MIMETYPE = 0;
+        final int POS_NAME = 1;
+        final int POS_MTIME = 2;
+        final int POS_FILESIZE = 3;
+        final int POS_CTIME = 4;
+        final int POS_FOLDER_LOCAL = 5;
+        final int POS_FOLDER_FIRST = 6;
+        final int POS_REVERSE = 7;
+        final int POS_DOTFILES = 8;
         
         final DialogOptions dopt = new DialogOptions();
         baseConf(activity, dopt);
@@ -1099,7 +1099,7 @@ public class MarkorDialogFactory {
 
         // Date (modification time)
         data.add(activity.getString(R.string.date));
-        icons.add(R.drawable.ic_date_range_black_24dp);
+        icons.add(R.drawable.ic_edit_black_24dp);
         layouts.add(android.R.layout.simple_list_item_single_choice);
 
         // Size
@@ -1122,10 +1122,12 @@ public class MarkorDialogFactory {
         icons.add(R.drawable.ic_baseline_rule_folder_24);
         layouts.add(android.R.layout.simple_list_item_multiple_choice);
 
+        // Reverse search order
         data.add(activity.getString(R.string.reverse_order));
         icons.add(R.drawable.ic_baseline_arrow_upward_24);
         layouts.add(android.R.layout.simple_list_item_multiple_choice);
 
+        // Show dotfiles
         data.add(activity.getString(R.string.dotfiles));
         icons.add(R.drawable.ic_regex_black_24dp);
         layouts.add(android.R.layout.simple_list_item_multiple_choice);
