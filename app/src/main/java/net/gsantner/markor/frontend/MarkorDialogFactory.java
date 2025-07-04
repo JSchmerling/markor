@@ -1070,15 +1070,15 @@ public class MarkorDialogFactory {
             final GsCallback.a1<GsFileUtils.SortOrder> callback
     ) {
         // Position constants for dialog items
-        private static final int POS_MIME_TYPE = 0;
-        private static final int POS_NAME = 1;
-        private static final int POS_MTIME = 2;
-        private static final int POS_FILESIZE = 3;
-        private static final int POS_CTIME = 4;
-        private static final int POS_FOLDER_LOCAL = 5;
-        private static final int POS_FOLDER_FIRST = 6;
-        private static final int POS_REVERSE = 7;
-        private static final int POS_DOTFILES = 8;
+        private final int POS_MIMETYPE = 0;
+        private final int POS_NAME = 1;
+        private final int POS_MTIME = 2;
+        private final int POS_FILESIZE = 3;
+        private final int POS_CTIME = 4;
+        private final int POS_FOLDER_LOCAL = 5;
+        private final int POS_FOLDER_FIRST = 6;
+        private final int POS_REVERSE = 7;
+        private final int POS_DOTFILES = 8;
         
         final DialogOptions dopt = new DialogOptions();
         baseConf(activity, dopt);
