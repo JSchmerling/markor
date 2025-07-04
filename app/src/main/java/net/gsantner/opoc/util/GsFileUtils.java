@@ -777,7 +777,7 @@ public class GsFileUtils {
                     return String.format("%015d", ctime) + name;
                 } catch (IOException e) {
                     // Fallback to lastModified
-                return String.format("%015d", ctime) + name;
+                return file.lastModified() + name;
                 }
             }
             case SORT_BY_MTIME: {
