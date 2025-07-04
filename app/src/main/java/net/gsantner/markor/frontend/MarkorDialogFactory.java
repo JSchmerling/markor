@@ -1075,27 +1075,38 @@ public class MarkorDialogFactory {
         final List<String> data = new ArrayList<>();
         final List<Integer> icons = new ArrayList<>();
         final List<Integer> layouts = new ArrayList<>();
-
-        data.add(activity.getString(R.string.folder_local));
-        icons.add(R.drawable.ic_save_black_24dp);
-        layouts.add(android.R.layout.simple_list_item_multiple_choice);
-
-        data.add(activity.getString(R.string.name));
-        icons.add(R.drawable.ic_sort_by_alpha_black_24dp);
-        layouts.add(android.R.layout.simple_list_item_single_choice);
-
-        data.add(activity.getString(R.string.date));
-        icons.add(R.drawable.ic_date_range_black_24dp);
-        layouts.add(android.R.layout.simple_list_item_single_choice);
-
-        data.add(activity.getString(R.string.size));
-        icons.add(R.drawable.ic_sd_card_black_24dp);
-        layouts.add(android.R.layout.simple_list_item_single_choice);
-
+        
+        // MIME Type
         data.add(activity.getString(R.string.mime_type));
         icons.add(R.drawable.ic_baseline_plagiarism_24);
         layouts.add(android.R.layout.simple_list_item_single_choice);
 
+        // Name
+        data.add(activity.getString(R.string.name));
+        icons.add(R.drawable.ic_sort_by_alpha_black_24dp);
+        layouts.add(android.R.layout.simple_list_item_single_choice);
+
+        // Date (modification time)
+        data.add(activity.getString(R.string.date));
+        icons.add(R.drawable.ic_date_range_black_24dp);
+        layouts.add(android.R.layout.simple_list_item_single_choice);
+
+        // Size
+        data.add(activity.getString(R.string.size));
+        icons.add(R.drawable.ic_sd_card_black_24dp);
+        layouts.add(android.R.layout.simple_list_item_single_choice);
+
+        // Creation Time
+        data.add(activity.getString(R.string.creation_time));
+        icons.add(R.drawable.ic_date_range_black_24dp);
+        layouts.add(android.R.layout.simple_list_item_single_choice);
+
+        // Folder Local
+        data.add(activity.getString(R.string.folder_local));
+        icons.add(R.drawable.ic_save_black_24dp);
+        layouts.add(android.R.layout.simple_list_item_multiple_choice);
+
+        // Folder First
         data.add(activity.getString(R.string.folder_first));
         icons.add(R.drawable.ic_baseline_rule_folder_24);
         layouts.add(android.R.layout.simple_list_item_multiple_choice);
