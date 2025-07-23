@@ -92,7 +92,7 @@ public class FileInfoDialog extends DialogFragment {
             return true;}
         );
         tv(root, R.id.ui__fileinfodialog__sha_256).setOnLongClickListener(v -> {
-            GsContextUtils.instance.setClipboard(v.getContext(), GsFileUtils.sha256());
+            GsContextUtils.instance.setClipboard(v.getContext(), GsFileUtils.sha256(file));
             Toast.makeText(v.getContext(), R.string.clipboard, Toast.LENGTH_SHORT).show();
             return true;}
         );
