@@ -658,13 +658,20 @@ public class GsFileUtils {
         }
     }
 
-    public static String sha256(final byte[] data) {
-        return hash(data, "SHA-256");
+    public static String sha256(final File file) {
+        if (file == null || !file.exists() || !file.isFile()) {
+            return null;
+        }
+    
+        try {
+            final byte[] data = readBinaryFile(file);
+            return sha256(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    public static String sha512(final byte[] data) {
-        return hash(data, "SHA-512");
-    }
 
     public static long crc32(final CharSequence data) {
         final CRC32 alg = new CRC32();
