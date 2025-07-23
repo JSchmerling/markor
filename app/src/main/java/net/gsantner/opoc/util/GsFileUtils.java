@@ -658,8 +658,8 @@ public class GsFileUtils {
         }
     }
 
-    public static String md5(final byte[] data) {
-        return hash(data, "MD5");
+    public static String sha256(final byte[] data) {
+        return hash(data, "SHA-256");
     }
 
     public static String sha512(final byte[] data) {
