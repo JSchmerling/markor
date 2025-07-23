@@ -658,7 +658,7 @@ public class GsFileUtils {
         }
     }
 
-    public static String sha256(final File file) {
+    public static String[] sha256(final File file) {
         if (file == null || !file.exists() || !file.isFile()) {
             return null;
         }
@@ -671,20 +671,15 @@ public class GsFileUtils {
             while ((bytesRead = fis.read(buffer)) != -1) {
                 digest.update(buffer, 0, bytesRead);
             }
-            
+    
             byte[] hashBytes = digest.digest();
-            StringBuilder hexString = new StringBuilder();
+            String[] hexArray = new String[hashBytes.length];
+        
             for (int i = 0; i < hashBytes.length; i++) {
-                if (i > 0) {
-                    hexString.append(':');
-                }
-                String hex = Integer.toHexString(0xff & hashBytes[i]);
-                if (hex.length() == 1) {
-                    hexString.append('0');
-                }
-                hexString.append(hex);
+                hexArray[i] = String.format("%02x", hashBytes[i]);
             }
-            return hexString.toString();
+
+            return hexArray;
         
         } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
