@@ -169,7 +169,7 @@
                 android:lines="1"
                 android:text="@string/sha_256"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                android:textStyle="0" />
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/ui__fileinfodialog__sha_256"
