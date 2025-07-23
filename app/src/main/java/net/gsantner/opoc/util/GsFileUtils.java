@@ -658,27 +658,39 @@ public class GsFileUtils {
         }
     }
 
-    public static String sha256Stream(final File file) {
+    public static String sha256(final File file) {
         if (file == null || !file.exists() || !file.isFile()) {
             return null;
         }
-    
+
         try (final FileInputStream fis = new FileInputStream(file)) {
             final MessageDigest digest = MessageDigest.getInstance("SHA-256");
             final byte[] buffer = new byte[BUFFER_SIZE];
             int bytesRead;
-        
+    
             while ((bytesRead = fis.read(buffer)) != -1) {
                 digest.update(buffer, 0, bytesRead);
             }
+            
+            byte[] hashBytes = digest.digest();
+            StringBuilder hexString = new StringBuilder();
+            for (int i = 0; i < hashBytes.length; i++) {
+                if (i > 0) {
+                    hexString.append(':');
+                }
+                String hex = Integer.toHexString(0xff & hashBytes[i]);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
         
-            return Arrays.toString(digest.digest());
         } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
             return null;
         }
     }
-
 
     public static long crc32(final CharSequence data) {
         final CRC32 alg = new CRC32();
