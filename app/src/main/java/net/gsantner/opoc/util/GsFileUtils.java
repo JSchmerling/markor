@@ -658,15 +658,22 @@ public class GsFileUtils {
         }
     }
 
-    public static String sha256(final File file) {
+    public static String sha256Stream(final File file) {
         if (file == null || !file.exists() || !file.isFile()) {
             return null;
         }
     
-        try {
-            final byte[] data = readBinaryFile(file);
-            return sha256(data);
-        } catch (Exception e) {
+        try (final FileInputStream fis = new FileInputStream(file)) {
+            final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            final byte[] buffer = new byte[BUFFER_SIZE];
+            int bytesRead;
+        
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                digest.update(buffer, 0, bytesRead);
+            }
+        
+            return Arrays.toString(digest.digest());
+        } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
             return null;
         }
