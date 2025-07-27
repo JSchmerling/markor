@@ -5,6 +5,6 @@ public class MenuUtils {
     public static void hideMenu(Menu menu) {
         Menu actions = menu.findViewbyId(R.id.actions);
 
-        actions.setVisible(false);
+        actions.setVisibility(View.GONE);
     }
 }
