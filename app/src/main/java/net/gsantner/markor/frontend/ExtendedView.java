@@ -1,4 +1,5 @@
 import android.view.Menu;
+import net.gsantner.markor.R;
 
 public class MenuUtils {
     public static void hideActionsMenu(Menu menu) {
