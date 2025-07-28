@@ -8,7 +8,7 @@
 #########################################################*/
 -->
 <menu 
-    android:id="@+id/actions"
+    android:id="@+id/document__edit__menu"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
